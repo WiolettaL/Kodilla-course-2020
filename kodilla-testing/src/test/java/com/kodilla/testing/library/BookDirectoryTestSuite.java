@@ -100,7 +100,7 @@ public class BookDirectoryTestSuite {
     }
 
     @Test
-    public void testOneBookInUsersHands(){
+    public void testOneBookInUsersHands1(){
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
@@ -117,7 +117,7 @@ public class BookDirectoryTestSuite {
     }
 
     @Test
-    public void testFiveBooksInUsersHands(){
+    public void testFiveBooksInUsersHands1(){
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
@@ -132,4 +132,7 @@ public class BookDirectoryTestSuite {
         Assert.assertEquals(listOfFiveBooks.size(), resultListOfNBooks.size());
         verify(libraryDatabaseMock, atLeastOnce()).listBooksInHandsOf(any(LibraryUser.class));
     }
+
 }
+
+
