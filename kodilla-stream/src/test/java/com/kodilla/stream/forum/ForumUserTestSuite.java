@@ -90,11 +90,11 @@ public class ForumUserTestSuite {
         //Then
         //user1 has 3 friends with following friends and their locations:
         //   user3:  user1: - should be skipped ("this" in context of user1)
-        //           user7: "Washington"
-        //           user2: "Miami"
-        //           user9: "Washington" - duplicated, should be skipped
-        //   user7:  user1: - should be skipped ("this" in context of user1)
-        //           user3: "Key West"
+        //        //           user7: "Washington"
+        //        //           user2: "Miami"
+        //        //           user9: "Washington" - duplicated, should be skipped
+        //        //   user7:  user1: - should be skipped ("this" in context of user1)
+        //        //           user3: "Key West"
         //   user10: user1: - should be skipped ("this" in context of user1)
         Assert.assertEquals(3, user1.getLocationsOfFriendsOfFriends().size());
         Assert.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Key West"));
