@@ -10,7 +10,7 @@ public class FlightsExceptionHandling {
         } catch (RouteNotFoundException e) {
             System.out.println("We don't have the flight that you're looking for.");
         } finally {
-            System.out.println("Search another destination.");
+            System.out.println("Continue and search another destination.");
         }
     }
 

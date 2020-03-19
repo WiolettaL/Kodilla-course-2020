@@ -13,7 +13,7 @@ public class SkyScanner {
         flightsSchedule.put("Newark", true);
 
         for(Map.Entry<String, Boolean> entry : flightsSchedule.entrySet()) {
-            if(flight.getDepartureAirport() == entry.getKey()) {
+            if(flightsSchedule.containsKey(flight.getDepartureAirport())) {
                 return flightsSchedule.get(flight.getDepartureAirport());
             } else {
                 throw new RouteNotFoundException("Sorry! Try another flight!");
