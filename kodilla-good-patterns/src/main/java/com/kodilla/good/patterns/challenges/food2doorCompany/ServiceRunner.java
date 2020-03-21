@@ -3,6 +3,7 @@ package com.kodilla.good.patterns.challenges.food2doorCompany;
 public class ServiceRunner {
     public static void main(String[] args) {
 
+        Producer producer;
         HealthyShop healthyShop;
 
         OrderService orderService = new OrderService();
@@ -10,17 +11,13 @@ public class ServiceRunner {
         InfoService infoService = new InfoService("e-mail");
 
 
-        orderService.createOrder(new Order(new Product("Muu!!", "milk"), 45, "665"), HealthyShop);
-
-   //    Order milkOrder = new Order(new Product("Muuu!", "milk"), 123, "45523");
-   //    Producer producerOne = new Producer("HealthyShop", "Flowers Str. 88/102", true);
-
+        orderService.createOrder(new Order(new Product("Muu!!", "milk"), 45, "665"), healthyShop);
 
         GeneralOrdersService generalOrdersService = new GeneralOrdersService(infoService, orderService, producersService);
         generalOrdersService.processOrder();
 
 
-      //  infoService.inform("HealthyFood");
+        infoService.inform();
 
     }
 }
