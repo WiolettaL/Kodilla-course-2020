@@ -18,7 +18,7 @@ public class ServiceRunner {
         System.out.println();
 
         orderService.createOrder(new Order(new Product("Muu!!", "milk"), 45, "665"), hsProducer);
-        orderService.createOrder(new Order(new Product("Corny", "oats"), 100, "666"), gfsProducer);
+        orderService.createOrder(new Order(new Product("Corny", "oats"), 1, "666"), gfsProducer);
         orderService.createOrder(new Order(new Product("chickpeas", "vegetables"), 150, "667"), efsProducer);
 
         System.out.println();
@@ -31,7 +31,6 @@ public class ServiceRunner {
         infoService.inform(hsProducer);
         infoService.inform(gfsProducer);
         infoService.inform(efsProducer);
-
 
     }
 }
