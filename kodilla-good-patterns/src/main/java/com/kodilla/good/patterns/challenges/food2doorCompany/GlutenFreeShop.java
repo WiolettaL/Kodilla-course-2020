@@ -2,8 +2,6 @@ package com.kodilla.good.patterns.challenges.food2doorCompany;
 
 public class GlutenFreeShop implements ProducerInterface {
 
-   Producer glutenFreeShop = new Producer("Gluten Free Shop", "Gluten Str 34/78", true);
-
     @Override
     public boolean process(Order order) {
         if(order.getAmount() >= 15) {

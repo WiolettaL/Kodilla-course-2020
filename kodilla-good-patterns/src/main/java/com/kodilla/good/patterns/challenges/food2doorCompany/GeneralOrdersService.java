@@ -13,8 +13,7 @@ public class GeneralOrdersService {
     }
 
     public void processOrder() {
-        System.out.println("Creating order...\n" + orderService.getOrdersList() + "\n" + producersService.getProducersSet());
+        System.out.println("Processing database...\n" + orderService.getOrdersList() + "\n" + producersService.getProducersSet());
     }
-
 
 }

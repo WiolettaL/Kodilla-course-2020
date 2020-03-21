@@ -15,7 +15,7 @@ public class InfoService {
     public boolean inform(Producer producer) {
         boolean infoPossibility;
        if (producer != null) {
-            System.out.println("Sending e-mail with confirmation to: " + producer);
+            System.out.println("Sending e-mail with confirmation to: " + producer.getProducerName());
             infoPossibility = true;
         } else {
             System.out.println("Something went wrong. E-mail with confirmation has not been send to producer...");

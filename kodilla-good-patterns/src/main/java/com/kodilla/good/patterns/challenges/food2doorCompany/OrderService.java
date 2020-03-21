@@ -20,4 +20,11 @@ public class OrderService {
         System.out.println("Current orders: " + ordersList.size());
         return ordersList;
     }
+
+    @Override
+    public String toString() {
+        return "OrderService{" +
+                "ordersList=" + ordersList +
+                '}';
+    }
 }

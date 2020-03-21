@@ -1,12 +1,6 @@
 package com.kodilla.good.patterns.challenges.food2doorCompany;
 
-public class HealthyShop extends Producer implements ProducerInterface {
-
-    Producer healthyShop = new HealthyShop("HealthyShop", "Flowers Str. 88/102", true);
-
-    public HealthyShop(String producerName, String address, boolean isAvailable) {
-        super(producerName, address, isAvailable);
-    }
+public class HealthyShop implements ProducerInterface {
 
     @Override
     public boolean process(Order order) {
