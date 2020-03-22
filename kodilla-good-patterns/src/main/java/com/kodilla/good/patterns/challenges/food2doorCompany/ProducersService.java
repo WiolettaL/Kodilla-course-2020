@@ -19,4 +19,5 @@ public final class ProducersService {
         System.out.println("Current producers quantity:" + producersSet.size());
         return producersSet;
     }
+
 }

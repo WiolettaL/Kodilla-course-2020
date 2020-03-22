@@ -20,6 +20,10 @@ public class Producer {
         return address;
     }
 
+    public void process(Order order) {
+        System.out.println("Processing new order");
+    }
+
     public boolean isAvailable() {
         if(producerName != null && isAvailable == true) {
             System.out.println("Welcome to " + producerName);
