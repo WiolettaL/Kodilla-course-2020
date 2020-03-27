@@ -20,12 +20,8 @@ public class Producer {
         return address;
     }
 
-    public void process(Order order) {
-        System.out.println("Processing new order");
-    }
-
     public boolean isAvailable() {
-        if(producerName != null && isAvailable == true) {
+        if(isAvailable == true) {
             System.out.println("Welcome to " + producerName);
         } else {
             System.out.println("Warning! This provider does not support our services!");

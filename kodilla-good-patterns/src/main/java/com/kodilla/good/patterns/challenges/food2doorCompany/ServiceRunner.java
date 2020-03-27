@@ -7,9 +7,9 @@ public class ServiceRunner {
         ProducersService producersService = new ProducersService();
         InfoService infoService = new InfoService("e-mail");
 
-        Producer hsProducer = new Producer("HealthyShop", "Flowers Str. 88/102", true);
-        Producer gfsProducer = new Producer("GlutenFreeShop", "Gluten Str. 564/92", true);
-        Producer efsProducer = new Producer("ExtraFoodShop", "Extra Str. 543/98", true);
+        Producer hsProducer = new HealthyShop("HealthyShop", "Flowers Str. 88/102", true);
+        Producer gfsProducer = new GlutenFreeShop("GlutenFreeShop", "Gluten Str. 564/92", true);
+        Producer efsProducer = new ExtraFoodShop("ExtraFoodShop", "Extra Str. 543/98", true);
 
         producersService.contractProducer(hsProducer);
         producersService.contractProducer(gfsProducer);

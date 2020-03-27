@@ -1,6 +1,10 @@
 package com.kodilla.good.patterns.challenges.food2doorCompany;
 
-public class ExtraFoodShop implements ProducerInterface {
+public class ExtraFoodShop extends Producer implements ProducerInterface {
+
+    public ExtraFoodShop(String producerName, String address, boolean isAvailable) {
+        super(producerName, address, isAvailable);
+    }
 
     @Override
     public boolean process(Order order) {
