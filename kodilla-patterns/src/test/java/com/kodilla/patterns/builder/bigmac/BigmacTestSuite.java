@@ -23,3 +23,4 @@ public class BigmacTestSuite {
         Assert.assertEquals(2, howManyBuns);
     }
 }
+
