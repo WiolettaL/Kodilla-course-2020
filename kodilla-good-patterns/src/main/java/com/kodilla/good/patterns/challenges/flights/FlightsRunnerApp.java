@@ -9,8 +9,8 @@ public class FlightsRunnerApp {
         FlightsController arrivalFlightsController = new FlightsController();
         System.out.println(arrivalFlightsController.arrivalFlights("KRK"));
 
-        FlightsController connectionFlightsController = new FlightsController();
-        System.out.println(connectionFlightsController.connectedFlights("RZE", "WAW", "GDA"));
+     //  FlightsController connectionFlightsController = new FlightsController();
+     //  System.out.println(connectionFlightsController.connectedFlights("RZE", "WAW", "GDA"));
     }
 
 }
