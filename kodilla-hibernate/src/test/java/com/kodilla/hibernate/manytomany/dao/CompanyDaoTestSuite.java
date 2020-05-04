@@ -54,15 +54,10 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        List<Employee> searchEmployee = employeeDao.retrieveEmployeesByLastname("Kovalsky");
-        List<Company> searchCompany = companyDao.retrieveCompaniesByName("sof%");
-
         //Then
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
-        Assert.assertEquals(1, searchEmployee.size());
-        Assert.assertEquals(1, searchCompany.size());
 
         //CleanUp
         try {
@@ -72,6 +67,55 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nth
         }
+    }
+
+    @Test
+    public void testRetrieveByNames() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+
+        //When
+        List<Employee> employeeName = employeeDao.retrieveEmployeesByLastname("Smith");
+
+        //Then
+        Assert.assertEquals(1, employeeName.size());
+
+        //CleanUp
+        employeeDao.delete(johnSmith);
+        employeeDao.delete(stephanieClarckson);
+        employeeDao.delete(lindaKovalsky);
+    }
+
+    @Test
+    public void testRetrieveByCompany() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        //When
+        List<Company> companyName = companyDao.retrieveCompaniesByName("Sof");
+
+        //Then
+        Assert.assertEquals(1, companyName.size());
+
+        //CleanUp
+        companyDao.delete(softwareMachine);
+        companyDao.delete(dataMaesters);
+        companyDao.delete(greyMatter);
 
     }
 }
+
+
+

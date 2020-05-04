@@ -5,9 +5,11 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
+@NamedNativeQuery(
         name = "Company.retrieveCompaniesByName",
-        query = "FROM Company WHERE name > :STR"
+        query = "SELECT * FROM COMPANIES" +
+                "WHERE COMPANY_NAME LIKE CONCAT('%', :NAME, '%')",
+        resultClass = Company.class
 )
 
 @Entity
