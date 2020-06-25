@@ -4,18 +4,22 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
-@NamedNativeQuery(
-        name = "Company.retrieveCompaniesByName",
-        query = "SELECT * FROM COMPANIES" +
-                "WHERE COMPANY_NAME LIKE CONCAT('%', :NAME, '%')",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesByThreeCharsOfName",
+                query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :CHARS",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesByPhrasePart",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE '%':ARG'%'",
+                resultClass = Company.class
+        )
+})
 
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
-
     private int id;
     private String name;
     private List<Employee> employees = new ArrayList<>();
@@ -35,26 +39,26 @@ public class Company {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     @NotNull
     @Column(name = "COMPANY_NAME")
     public String getName() {
         return name;
     }
 
-    private void setName(String name) {
-        this.name = name;
-    }
-
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }
 
-    private void setEmployees(List<Employee> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    private void setId(int id) {
+        this.id = id;
+    }
+
+    private void setName(String name) {
+        this.name = name;
     }
 }

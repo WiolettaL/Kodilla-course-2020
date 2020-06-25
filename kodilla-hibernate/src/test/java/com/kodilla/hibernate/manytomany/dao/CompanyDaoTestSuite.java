@@ -81,7 +81,7 @@ public class CompanyDaoTestSuite {
         employeeDao.save(lindaKovalsky);
 
         //When
-        List<Employee> employeeName = employeeDao.retrieveEmployeesByLastname("Smith");
+        List<Employee> employeeName = employeeDao.retrieveEmployeesByLastName("Smith");
 
         //Then
         Assert.assertEquals(1, employeeName.size());
@@ -92,29 +92,29 @@ public class CompanyDaoTestSuite {
         employeeDao.delete(lindaKovalsky);
     }
 
-    @Test
-    public void testRetrieveByCompany() {
-        //Given
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
+//   @Test
+//   public void testRetrieveByCompany() {
+//       //Given
+//       Company softwareMachine = new Company("Software Machine");
+//       Company dataMaesters = new Company("Data Maesters");
+//       Company greyMatter = new Company("Grey Matter");
 
-        companyDao.save(softwareMachine);
-        companyDao.save(dataMaesters);
-        companyDao.save(greyMatter);
+//       companyDao.save(softwareMachine);
+//       companyDao.save(dataMaesters);
+//       companyDao.save(greyMatter);
 
-        //When
-        List<Company> companyName = companyDao.retrieveCompaniesByName("Sof");
+//       //When
+//       List<Company> companyName = companyDao.retrieveCompaniesByName("Sof");
 
-        //Then
-        Assert.assertEquals(1, companyName.size());
+//       //Then
+//       Assert.assertEquals(1, companyName.size());
 
-        //CleanUp
-        companyDao.delete(softwareMachine);
-        companyDao.delete(dataMaesters);
-        companyDao.delete(greyMatter);
+//       //CleanUp
+//       companyDao.delete(softwareMachine);
+//       companyDao.delete(dataMaesters);
+//       companyDao.delete(greyMatter);
 
-    }
+//   }
 }
 
 
