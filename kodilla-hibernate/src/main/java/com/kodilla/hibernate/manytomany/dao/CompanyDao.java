@@ -10,7 +10,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface CompanyDao extends CrudRepository<Company, Integer> {
+public interface  CompanyDao extends CrudRepository<Company, Integer> {
 
     @Query(nativeQuery = true)
     List<Company> retrieveCompaniesByThreeCharsOfName(@Param("CHARS") String s);
