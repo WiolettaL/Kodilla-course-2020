@@ -19,6 +19,7 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok'
     annotationProcessor 'org.projectlombok:lombok'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.20.RELEASE'
+    compile('org.springframework.boot:spring-boot-starter-aop')
 }
 
 test {
